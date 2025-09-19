@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Shopping Component</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <button class="nav-arrow nav-arrow-left" onclick="previousQuestion()">‹</button>
+        <button class="nav-arrow nav-arrow-right" onclick="nextQuestion()">›</button>
+    </nav>
+
+    <div class="container">
+        <div class="title-section">
+            <p class="category">GROCERY/SHOPPING</p>
+            <h1 class="main-title">
+                How do you usually carry your groceries/shopping?
+            </h1>
+        </div>
+
+        <div class="cards-section">
+            <div class="primary-cards">
+                <div class="option-card" id="local-card" onclick="selectPrimaryOption('local')">
+                    <div class="card-image">🧺</div>
+                    <div class="card-title">Local Vendors / Sabzi Mandi</div>
+                    <div class="card-description">I buy local, seasonal produce from vendors/sabzi mandi, and avoid plastic packaging.</div>
+                </div>
+
+                <div class="option-card" id="online-card" onclick="selectPrimaryOption('online')">
+                    <div class="card-image">📱</div>
+                    <div class="card-title">Quick Commerce Apps</div>
+                    <div class="card-description">Zepto, Blinkit, etc.</div>
+                </div>
+
+                <div class="option-card" id="supermarket-card" onclick="selectPrimaryOption('supermarket')">
+                    <div class="card-image">🛒</div>
+                    <div class="card-title">Supermarkets</div>
+                    <div class="card-description">Mostly from large supermarkets (rely on pre-packaged goods).</div>
+                </div>
+            </div>
+
+            <!-- Secondary selection for Local Vendors -->
+            <div class="secondary-section" id="local-secondary" style="display: none;">
+                <h3 class="secondary-title">What type of bags do you usually use?</h3>
+                <div class="secondary-cards">
+                    <div class="secondary-card" onclick="selectSecondaryOption('cloth-bag')">
+                        <div class="secondary-icon">👜</div>
+                        <div class="secondary-text">Cloth Bag</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('jute-bag')">
+                        <div class="secondary-icon">🛍️</div>
+                        <div class="secondary-text">Jute Bag</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('reusable-plastic')">
+                        <div class="secondary-icon">🎒</div>
+                        <div class="secondary-text">Reusable Plastic</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('paper-bag')">
+                        <div class="secondary-icon">📄</div>
+                        <div class="secondary-text">Paper Bag</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary selection for Online -->
+            <div class="secondary-section" id="online-secondary" style="display: none;">
+                <h3 class="secondary-title">From where do you usually order?</h3>
+                <div class="secondary-cards">
+                    <div class="secondary-card" onclick="selectSecondaryOption('zepto')">
+                        <div class="secondary-icon">⚡</div>
+                        <div class="secondary-text">Zepto</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('blinkit')">
+                        <div class="secondary-icon">🟡</div>
+                        <div class="secondary-text">Blinkit</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('bigbasket')">
+                        <div class="secondary-icon">🟢</div>
+                        <div class="secondary-text">BigBasket</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('amazon-fresh')">
+                        <div class="secondary-icon">📦</div>
+                        <div class="secondary-text">Amazon Fresh</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary selection for Supermarkets -->
+            <div class="secondary-section" id="supermarket-secondary" style="display: none;">
+                <h3 class="secondary-title">From where do you usually buy?</h3>
+                <div class="secondary-cards">
+                    <div class="secondary-card" onclick="selectSecondaryOption('dmart')">
+                        <div class="secondary-icon">🔵</div>
+                        <div class="secondary-text">D-Mart</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('reliance-fresh')">
+                        <div class="secondary-icon">🔴</div>
+                        <div class="secondary-text">Reliance Fresh</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('more-supermarket')">
+                        <div class="secondary-icon">🟠</div>
+                        <div class="secondary-text">More Supermarket</div>
+                    </div>
+                    <div class="secondary-card" onclick="selectSecondaryOption('local-supermarket')">
+                        <div class="secondary-icon">🏪</div>
+                        <div class="secondary-text">Local Supermarket</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selection display -->
+            <div class="selection-display" id="selection-display" style="display: none;">
+                <div class="selection-value" id="selection-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="grocery-script.js"></script>
+</body>
+</html>
